@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lnag="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>회원가입</title>
+        <link rel="stylesheet" href="../css/style2.css">
+        <script type ="text/javascript">
+      	function checkValue() {
+             var finp = document.idata;
+             if(!document.idata.id.value) {
+                   alert("아이디를 입력하세요 !");
+                   document.idata.id.focus();
+                   return false;
+             } else if(!document.idata.pw.value) {
+                   alert("비밀번호를 입력해주세요 !");
+                   document.idata.pw.focus();
+                   return false;
+             } else if(!document.idata.pwre.value) {
+                   alert("비밀번호가 맞지 않습니다 !");
+                   document.idata.pwre.focus();
+                   return false;
+             } else if(!document.idata.name.value) {
+                   alert("이름을 입력해주세요 !");
+                   document.idata.name.focus();
+                   return false;
+             } else if(!document.idata.year.value) {
+                   alert("생년월일을 입력해주세요 !");
+                   document.idata.year.focus();
+                   return false;
+	 } else if(!document.idata.month.value) {
+                   alert("생년월일을 입력해주세요 !");
+                   document.idata.month.focus();
+                   return false;
+	 } else if(!document.idata.day.value) {
+                   alert("생년월일을 입력해주세요 !");
+                   document.idata.day.focus();
+                   return false;
+	 } else if(!document.idata.gender.value) {
+                   alert("성별을 입력해주세요 !");
+                   document.idata.gender.focus();
+                   return false;
+             } else if(!document.idata.phone.value) {
+                   alert("전화번호를 입력해주세요 !");
+                   document.idata.phone.focus();
+                   return false;
+             }
+       }
+      </script>
+    </head>
+    <body>
+        <!-- header -->
+            <iframe src ="../layout/header.html" width =100% height = 80px;></iframe>
+   	<form name="idata" action="join_p.jsp" method="post" onsubmit="return checkValue()">
+        <!-- wrapper -->
+        <div id="wrapper">
+
+            <!-- content-->
+            <div id="content">
+		
+                <!-- ID -->
+                <div>
+                    <h3 class="join_title">
+                        <label for="id">아이디</label>
+                    </h3>
+                    <span class="box int_id">
+                        <input type="text" id="id" class="int" maxlength="20" name="id">
+                        <span class="step_url">@exam.com</span>
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+                <!-- PW1 -->
+                <div>
+                    <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
+                    <span class="box int_pass">
+                        <input type="password" id="pswd1" class="int" maxlength="20" name="pw">
+                        <span id="alertTxt">사용불가</span>
+
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+	    
+
+                <!-- PW2 -->
+                <div>
+                    <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
+                    <span class="box int_pass_check">
+                        <input type="password" id="pswd2" class="int" maxlength="20" name = "pwre">
+                        
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+                <!-- NAME -->
+                <div>
+                    <h3 class="join_title"><label for="name">이름</label></h3>
+                    <span class="box int_name">
+                        <input type="text" id="name" class="int" maxlength="20" name ="name">
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+                <!-- BIRTH -->
+                <div>
+                    <h3 class="join_title"><label for="yy">생년월일</label></h3>
+
+                    <div id="bir_wrap">
+                        <!-- BIRTH_YY -->
+                        <div id="bir_yy">
+                            <span class="box">
+                                <input type="text" id="yy" class="int" maxlength="4" placeholder="년(4자)" name = "year">
+                            </span>
+                        </div>
+
+                        <!-- BIRTH_MM -->
+                        <div id="bir_mm">
+                            <span class="box">
+                                <input type="text" id="mm" class="int" maxlength="2" placeholder="월" name = "month">
+                            </span>
+                        </div>
+
+                        <!-- BIRTH_DD -->
+                        <div id="bir_dd">
+                            <span class="box">
+                                <input type="text" id="dd" class="int" maxlength="2" placeholder="일" name = "day">
+                            </span>
+                        </div>
+
+                    </div>
+                    <span class="error_next_box"></span>    
+                </div>
+
+                <!-- GENDER -->
+                <div>
+                    <h3 class="join_title"><label for="gender">성별</label></h3>
+                    	    <span class="box gender_code">
+                                <input type="text" id="gender" class="int" maxlength="2" placeholder="성별" name = "gender">
+                            </span>                           
+                    </span>
+                    <span class="error_next_box">필수 정보입니다.</span>
+                </div>
+
+                <!-- EMAIL -->
+                <div>
+                    <h3 class="join_title"><label for="email">본인확인 이메일<span class="optional">(선택)</span></label></h3>
+                    <span class="box int_email">
+                        <input type="text" id="email" class="int" maxlength="100" placeholder="선택입력">
+                    </span>
+                    <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>    
+                </div>
+
+                <!-- MOBILE -->
+                <div>
+                    <h3 class="join_title"><label for="phoneNo">휴대전화</label></h3>
+                    <span class="box int_mobile">
+                        <input type="tel" id="mobile" class="int" maxlength="16" placeholder="전화번호 입력" name = "phone">
+                    </span>
+                    <span class="error_next_box"></span>    
+                </div>
+
+
+                <!-- JOIN BTN-->
+	    <div class="btn_area">
+                    <button type="submit" id="btnJoin">
+                        <span>가입하기</span>
+                    </button>
+                </div>
+
+                
+
+            </div> 
+            <!-- content-->
+
+        </div> 
+        <!-- wrapper -->
+    <script src="main.js"></script>
+    </body>
+</html>
